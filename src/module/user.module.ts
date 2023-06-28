@@ -6,15 +6,7 @@ import { UserService } from '../service/user.service';
 import { UserRepository } from 'src/repository/user.repository';
 
 @Module({
-  imports: [
-    TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: 'database.db',
-      synchronize: true,
-      entities: [__dirname + '/../**/*.entity.js'],
-    }),
-    TypeOrmModule.forFeature([UserEntity]),
-  ],
+  imports: [TypeOrmModule.forFeature([UserEntity])],
   controllers: [UserController],
   providers: [UserService, UserRepository],
 })

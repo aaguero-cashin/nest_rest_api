@@ -116,8 +116,6 @@ export class UserRepository {
     } catch (e) {
       console.log(e);
       throw new Error('error on repository');
-    } finally {
-      await queryRunner.release();
     }
   }
 
